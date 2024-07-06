@@ -1,0 +1,105 @@
+@font-face {
+  font-family: juli;
+  src: url("../fonts/JuliusSansOne-Regular.ttf");
+
+}
+@font-face {
+  font-family: One;
+  src: url("../fonts/UnicaOne-Regular.ttf");
+
+}
+@font-face {
+  font-family: Jose;
+  src: url("../fonts/JosefinSans-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: Rub;
+  src: url("../fonts/RubikMonoOne-Regular.ttf");
+}
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+      background-image: url('../images/2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+nav {
+    background-color: #333;
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.home-link {
+   font-family: juli;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.home-link:hover {
+  font-family: juli;
+  text-decoration: underline;
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.image-container {
+  flex: 1;
+  min-width: calc(33.333% - 10px);
+  max-width: calc(33.333% - 10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 5px;
+  /* Add a fixed height */
+  height: 800px; /* Adjust this value to suit your needs */
+}
+
+img {
+  width: 100%;
+  height: 100%; /* Make the image take the full height of the container */
+  display: block;
+  object-fit: cover; /* Make the image cover the entire area of the container */
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.2);
+}
+.hero h1{
+  color: whitesmoke;
+  font-family: juli;
+  text-align: center;
+
+}
+
+
+.hero p{
+  color: whitesmoke;
+  display: flex;
+  font-family: Jose;
+  text-align: center;
+  font-weight: thin;
+}

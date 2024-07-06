@@ -1,0 +1,1779 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Final Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+h1{
+	font-size: 20pt;
+	text-align: center;
+}
+nav {
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+.home-link {
+
+  color: black;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+</style></head><body><article id="5adaabd0-9d09-4a93-ba3b-cd548651f03b" class="page sans"><header> 
+	<h1>
+ALICS
+	</h1>
+	<h1>
+		(Artificial intelligence For Life Improvement and conceling support)
+	</h1>
+	 <nav>
+      <a href="index.html" class="home-link">Go Back</a>
+    </nav>
+
+
+	    	<video width="800" height="400" controls style="object-position:center 20%">
+    <source src="images/video.mp4" type="video/mp4">
+  </video>
+
+
+  <div class="page-header-icon page-header-icon-with-cover"></div><h1 class="page-title">Alics Documentation</h1></header><div class="page-body"><nav id="d7f1baea-d1a2-4237-ae02-bc99f15c0840" class="block-color-pink table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#054a4872-196a-49aa-8893-fdfec031f2d9">Magic Mirror</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d93849ab-4fe9-4c4a-9aaf-b8364143a992">Python script ( youtube video)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ca557a36-3676-46bc-a011-60994dddb63c">The actual built</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#29fd1b37-23b3-4fc6-8edc-72d86a288c92">The final product code and installation instruction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#d3f719b4-6d29-4d70-8909-c3b0ee551694">Other parts -presentation, mockup, wood work</a></div></nav><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Magic Mirror</summary><div class="indented"><p id="ca7af718-2e3f-4a55-8918-51af106a3eeb" class="">At the very first stage of the project I was thinking using all of the modules from the open source platform, but because of the node.js’s packages  are constantly updating, a lot of the modules are poorly managed. </p><p id="c8f78c09-23cc-4b00-9522-58acb1cd2826" class="">
+</p><p id="d8e36797-be14-42f1-a0c1-c0fb94ad083f" class="">But during this process I was able to get to know the 11 lab api from the MMM-11-TTS module made by someone else. And Inspired me to go on with the hyper realistic voice over.</p><p id="6211ea90-661e-4461-90bc-0ae4c63ef3bf" class="">
+</p><p id="7efd7bd7-e061-4beb-855e-b21df87bce7c" class="">These are the links to the modules I used. </p><figure id="839961f0-a49b-4032-b52a-655c091cc296"><div class="source">https://github.com/sdmydbr9/MMM-11-TTS</div></figure><figure id="7a2093bd-81d6-4423-bdc5-c7660102744d"><div class="source">https://github.com/sdmydbr9/MMM-Chat</div></figure></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Python script ( youtube video)</summary><div class="indented"><p id="a6a2979c-1c1d-4481-943c-181f4f1d087b" class="">I came across a youtube video of a guy making a bing ai bot voice assistant. In the script, he used amazon polly for the voice over, and was having no user interface as he was running the program purely in the terminal. So I went a head kind of stealing his code.</p><p id="a1cb8f36-7698-48f2-896f-26fa880a27b7" class="">
+</p><figure id="a770c8a5-f91e-4982-893b-293557ff515b"><div class="source"><a href="https://www.youtube.com/watch?v=aokn48vB0kc&amp;t=220s">https://www.youtube.com/watch?v=aokn48vB0kc&amp;t=220s</a></div></figure><p id="3c967778-d282-49d4-a20d-29fcf31716b8" class="">
+</p><h2 id="45f6d5ec-f1c5-4a2e-9687-e9bd83be47e9" class="">Code in video</h2><p id="094a7e96-962b-4120-9a7e-7e7f4baadc46" class="">
+</p><p id="ef4df043-3b5c-422e-aa94-7df541ee289b" class="">Here is the code in the video. which I referenced the wakeword function and transcribe function </p><pre id="fd55e506-dc54-4948-9e92-082a96d36d53" class="code"><code>import openai
+import asyncio
+import re
+import whisper
+import boto3
+import pydub
+from pydub import playback
+import speech_recognition as sr
+from EdgeGPT import Chatbot, ConversationStyle
+
+# Initialize the OpenAI API
+openai.api_key = &quot;[paste your OpenAI API key here]&quot;
+
+# Create a recognizer object and wake word variables
+recognizer = sr.Recognizer()
+BING_WAKE_WORD = &quot;bing&quot;
+GPT_WAKE_WORD = &quot;gpt&quot;
+
+def get_wake_word(phrase):
+    if BING_WAKE_WORD in phrase.lower():
+        return BING_WAKE_WORD
+    elif GPT_WAKE_WORD in phrase.lower():
+        return GPT_WAKE_WORD
+    else:
+        return None
+    
+def synthesize_speech(text, output_filename):
+    polly = boto3.client(&#x27;polly&#x27;, region_name=&#x27;us-west-2&#x27;)
+    response = polly.synthesize_speech(
+        Text=text,
+        OutputFormat=&#x27;mp3&#x27;,
+        VoiceId=&#x27;Salli&#x27;,
+        Engine=&#x27;neural&#x27;
+    )
+
+    with open(output_filename, &#x27;wb&#x27;) as f:
+        f.write(response[&#x27;AudioStream&#x27;].read())
+
+def play_audio(file):
+    sound = pydub.AudioSegment.from_file(file, format=&quot;mp3&quot;)
+    playback.play(sound)
+
+async def main():
+    while True:
+
+        with sr.Microphone() as source:
+            recognizer.adjust_for_ambient_noise(source)
+            print(f&quot;Waiting for wake words &#x27;ok bing&#x27; or &#x27;ok chat&#x27;...&quot;)
+            while True:
+                audio = recognizer.listen(source)
+                try:
+                    with open(&quot;audio.wav&quot;, &quot;wb&quot;) as f:
+                        f.write(audio.get_wav_data())
+                    # Use the preloaded tiny_model
+                    model = whisper.load_model(&quot;tiny&quot;)
+                    result = model.transcribe(&quot;audio.wav&quot;)
+                    phrase = result[&quot;text&quot;]
+                    print(f&quot;You said: {phrase}&quot;)
+
+                    wake_word = get_wake_word(phrase)
+                    if wake_word is not None:
+                        break
+                    else:
+                        print(&quot;Not a wake word. Try again.&quot;)
+                except Exception as e:
+                    print(&quot;Error transcribing audio: {0}&quot;.format(e))
+                    continue
+
+            print(&quot;Speak a prompt...&quot;)
+            synthesize_speech(&#x27;What can I help you with?&#x27;, &#x27;response.mp3&#x27;)
+            play_audio(&#x27;response.mp3&#x27;)
+            audio = recognizer.listen(source)
+
+            try:
+                with open(&quot;audio_prompt.wav&quot;, &quot;wb&quot;) as f:
+                    f.write(audio.get_wav_data())
+                model = whisper.load_model(&quot;base&quot;)
+                result = model.transcribe(&quot;audio_prompt.wav&quot;)
+                user_input = result[&quot;text&quot;]
+                print(f&quot;You said: {user_input}&quot;)
+            except Exception as e:
+                print(&quot;Error transcribing audio: {0}&quot;.format(e))
+                continue
+
+            if wake_word == BING_WAKE_WORD:
+                bot = Chatbot(cookie_path=&#x27;cookies.json&#x27;)
+                response = await bot.ask(prompt=user_input, conversation_style=ConversationStyle.precise)
+                # Select only the bot response from the response dictionary
+                for message in response[&quot;item&quot;][&quot;messages&quot;]:
+                    if message[&quot;author&quot;] == &quot;bot&quot;:
+                        bot_response = message[&quot;text&quot;]
+                # Remove [^#^] citations in response
+                bot_response = re.sub(&#x27;\[\^\d+\^\]&#x27;, &#x27;&#x27;, bot_response)
+
+            else:
+                # Send prompt to GPT-3.5-turbo API
+                response = openai.ChatCompletion.create(
+                    model=&quot;gpt-3.5-turbo&quot;,
+                    messages=[
+                        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;:
+                        &quot;You are a helpful assistant.&quot;},
+                        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_input},
+                    ],
+                    temperature=0.5,
+                    max_tokens=150,
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0,
+                    n=1,
+                    stop=[&quot;\nUser:&quot;],
+                )
+
+                bot_response = response[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+                
+        print(&quot;Bot&#x27;s response:&quot;, bot_response)
+        synthesize_speech(bot_response, &#x27;response.mp3&#x27;)
+        play_audio(&#x27;response.mp3&#x27;)
+        await bot.close()
+
+if __name__ == &quot;__main__&quot;:
+    asyncio.run(main())</code></pre><p id="5fe1d250-6494-4587-8507-54ef24cec336" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">The actual built</summary><div class="indented"><p id="9bee0f3b-d1c4-42b4-bd06-cbdd153afba3" class="">
+</p><p id="53a17f6f-61d7-4aa0-aed1-6b5b80d7377a" class=""><strong>I didn’t comment the code as I was making the script, and the script was 500 lines long, it would be too much to go back and comment every line. So I would just type out the explanation for each snippets.  </strong></p><h2 id="6db8b97e-d205-4a03-adf8-820a5ccd2433" class="">Speech synthesis and play back</h2><h3 id="6053c234-3878-4d91-a1f4-2f57994de411" class="">Replacing amazon polly</h3><p id="102baeb8-b098-451c-a2be-c72ac5904947" class="">However, my intention was also to substitute the amazon polly with 11 lab api. Thats when the problem come in. In this video he simply used pydub sound library, and boto3 for the voice interaction part because amazon poly was able to give the pydub library a wav file to play back in time. But the 11 lab only could transport mp3 files, causing the whole process to be even slower.</p><h3 id="4daaf91e-b995-41d6-9049-9f9b3c6563f6" class="">Audio play speed</h3><p id="48b27b00-8448-4324-b018-005b17a01d17" class="">I asked gpt what to do with the slow play back speed, and it told me to transfer to another library called simpleaudio to transfer mp3 to wav and then play back to the user.</p><p id="0d5fd842-437f-460f-b117-e70b2ac80b4c" class="">
+</p><p id="a031d5b5-2f44-49ec-bf2d-517d89944ef6" class="">After I switched to simpleAudio, there happens to be a small chip noise at the start of the file, so I made it to delay play as I muted the first 44 bytes of the audio file.</p><p id="fd8b8998-f6fb-44ad-860c-65cf0c8ae42b" class="">
+</p><p id="418d03d7-9dab-43c6-bf14-3401cf25a9e0" class=""><code><strong>speech_recognition</strong></code> library is used to capture and transcribe the user&#x27;s voice input. The <code><strong>recognizer</strong></code> object is created to recognize speech from the microphone. <code><strong>energy_threshold</strong></code> is set to 300 to set the sensitivity of the whisper model.</p><p id="d9d2cb0c-9781-4eed-9af7-8d144d4818bc" class=""><code><strong>simpleaudio</strong></code> and <code><strong>pydub</strong></code> libraries are used to play audio files. <code><strong>play_audio</strong></code> function loads an mp3 file, converts it to wav format and plays it. The function also sets <code><strong>is_audio_playing</strong></code> variable to <code><strong>True</strong></code> to check the audio status for video update purposes.</p><p id="36d9117f-5a7f-477d-8cf4-b4be93996354" class=""><code><strong>elevenlabs</strong></code> library is used to synthesize speech using the eleven-labs API. <code><strong>synthesize_speech</strong></code> function takes the text to be synthesized and the output filename, generates an audio file using the <code><strong>generate</strong></code> function and saves it using <code><strong>write</strong></code> function.</p><p id="415ec315-d443-4b5b-8ac8-c4085c83db20" class=""><code><strong>transcribe_audio_with_whisper</strong></code> function uses the <code><strong>whisper</strong></code> library to transcribe an audio file using a whisper model. The function loads the model with the chosen size and returns the transcribed text.</p><p id="90ffdf06-ffe7-4686-b2bc-d84ac8856b48" class=""><code><strong>process_user_input</strong></code> function takes the user&#x27;s input, adds a string <code><strong>&quot;You said: &quot;</strong></code> to it and puts the resulting string in the <code><strong>response_queue</strong></code> to be later displayed in the GUI.</p><p id="bba1eb50-07d3-4838-8f59-b0e31515f8fb" class="">
+</p><p id="38c5c86a-9e9a-422a-ba47-83e99a9b2938" class="">
+</p><p id="ab98b3b9-6352-4ed7-a570-ff4d425d7cca" class="">Here is that part of the code  </p><pre id="882d7464-d0a1-4fb4-b159-e7799b6f5a35" class="code"><code>import speech_recognition as sr
+import simpleaudio as sa
+from pydub import AudioSegment
+import warnings
+from numba import NumbaDeprecationWarning
+import queue
+from elevenlabs import generate, play
+
+
+
+warnings.filterwarnings(&quot;ignore&quot;, category=NumbaDeprecationWarning)
+
+openai.api_key = f&quot;[YOUR API KEY]]&quot;
+
+API_KEY = f&quot;[YOUR API KEY]]]&quot;#11 lab api
+VOICE_ID = &quot;[YOUR VOICE ID]&quot;#voice id of your choice
+
+recognizer = sr.Recognizer()
+recognizer.energy_threshold = 300 #to set the sensitivity of the whisper model
+GPT_WAKE_WORD = &quot;hi alex&quot;
+GPT_SLEEP_WORD = &quot;goodbye&quot;
+
+
+def synthesize_speech(text, output_filename):
+     audio = generate(text, voice=VOICE_ID, api_key=API_KEY)
+     with open(output_filename, &#x27;wb&#x27;) as f:
+         f.write(audio)
+
+
+
+
+def transcribe_audio_with_whisper(audio_file_path):
+    model = whisper.load_model(&quot;base&quot;)  #choose the size of your whisper modle
+    result = model.transcribe(audio_file_path)
+    return result[&quot;text&quot;].strip()
+
+  
+def play_audio(file):
+    global is_audio_playing
+    is_audio_playing = True #check for audio status for video update propose
+    sound = AudioSegment.from_mp3(file)#expecting a mp3 file
+    audio_data = sound.export(format=&quot;wav&quot;)#transfer into wav file
+    audio_data = audio_data.read()
+
+    
+    audio_data = audio_data[44:] #skipping the first 44byte of the wav file to avoid a chip noise at the start of the recording.
+
+    audio_wave = sa.WaveObject(audio_data, sound.channels, sound.sample_width, sound.frame_rate)
+    play_obj = audio_wave.play()
+    play_obj.wait_done()
+    is_audio_playing = False
+
+
+def process_user_input(user_input, response_queue):
+    bot_response = &quot;You said: &quot; + user_input
+    response_queue.put(bot_response)</code></pre><h2 id="f4bae1cc-1a65-4f81-b700-8066ec173b5e" class="">Building the Sleep Command</h2><p id="5acd16a0-1f6d-42bb-a9fa-70a9683f0da2" class="">Because the video tutorial has a little wake function, so I thought to build a sleep command. So whenever the sleep word is detected, the bot will go back to listening for the wake word. So in an ideal situation, the user would always be able to hang the mirror on the wall. 
+</p><p id="0292bc3b-1436-4367-ada5-8d63db1db1cb" class="">The assistant listens for a wake word, which is set to the value of <code><strong>GPT_WAKE_WORD</strong></code>. When it detects the wake word, it starts listening for user input and transcribes it to text using a speech recognition library.</p><p id="0625a6e1-00de-4fa8-b74c-c7563178505d" class="">The user input is then passed to the GPT-3 API using OpenAI&#x27;s <code><strong>openai.ChatCompletion.create()</strong></code> method to generate a response. The response is then synthesized into an audio file using a text-to-speech library and played back to the user.</p><p id="3d6d04a5-edc7-4ae1-bffa-0c71c199a045" class="">The assistant also listens for a sleep word, which is set to the value of <code><strong>GPT_SLEEP_WORD</strong></code>, to stop listening for user input and go back to listening for the wake word. During this transition, the assistant plays an audio file that indicates it&#x27;s going to sleep.</p><p id="d5a1d40b-d400-423f-8717-f3327731d1b7" class="">The main function <code><strong>main_with_gui()</strong></code> uses a GUI to display the assistant&#x27;s responses and settings. The <code><strong>response_queue</strong></code> is a queue that holds the bot&#x27;s responses and <code><strong>text_var</strong></code> is a tkinter variable used to update the GUI display. The <code><strong>settings</strong></code> parameter is a dictionary that contains the settings for the GPT-3 API such as the model, the maximum number of tokens, and the system message to display to the user.</p><p id="d1b1a095-8856-4f57-8d15-6ef093b623c9" class="">
+</p><p id="f430ba59-95e6-484d-86c8-97f306a8da32" class="">here is the code</p><pre id="c332e03a-09af-42e7-8931-6782588ef916" class="code"><code>def get_wake_word(phrase):
+    
+   if GPT_WAKE_WORD in phrase.lower():
+       return GPT_WAKE_WORD
+   else:
+       return None
+  
+
+
+def get_sleep_word(phrase):
+   if GPT_SLEEP_WORD in phrase.lower():
+       return GPT_SLEEP_WORD
+   else:
+       return None
+
+async def main_with_gui(response_queue, text_var, settings):
+    wake_word_detected = False
+    greeting_played = False
+
+    while True:
+        with sr.Microphone() as source:
+            recognizer.adjust_for_ambient_noise(source)
+
+            if not wake_word_detected:
+                print(f&quot;Say {GPT_WAKE_WORD} to start a conversation...&quot;)
+
+                while True:
+                    audio = recognizer.listen(source)
+                    audio_file = &quot;audio.wav&quot;
+                    with open(audio_file, &quot;wb&quot;) as f:
+                        f.write(audio.get_wav_data())
+
+                    phrase = transcribe_audio_with_whisper(audio_file)
+                    print(f&quot;Phrase: {phrase}&quot;)
+
+                    if get_wake_word(phrase) is not None:
+                        wake_word_detected = True
+                        break
+                    else:
+                        print(&quot;Not a wake word. Try again.&quot;)
+
+            if not greeting_played:
+      
+                play_audio(&#x27;greetings.mp3&#x27;)
+                greeting_played = True
+
+            while wake_word_detected:
+                print(&quot;Speak a prompt...&quot;)
+                audio = recognizer.listen(source)
+                audio_file = &quot;audio_prompt.wav&quot;
+                with open(audio_file, &quot;wb&quot;) as f:
+                    f.write(audio.get_wav_data())
+
+                user_input = transcribe_audio_with_whisper(audio_file)
+
+                print(f&quot;User input: {user_input}&quot;)
+
+                if get_sleep_word(user_input) is not None:
+                    wake_word_detected = False
+                    greeting_played = False
+                    print(&quot;Sleep word detected, going back to listening for wake word.&quot;)
+
+                  
+                    play_audio(&#x27;sleep.mp3&#x27;)
+
+                 
+                    text_var.set(&quot;&quot;)
+
+                    break
+
+                response = openai.ChatCompletion.create(
+                    model=&quot;gpt-3.5-turbo&quot;,
+                    messages=[
+                        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: settings[&#x27;system_message&#x27;]},
+                        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_input},
+                    ],
+                    temperature=0.6,
+                    max_tokens=settings[&#x27;max_tokens&#x27;],
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0,
+                    n=1,
+                    stop=[&quot;\nUser:&quot;],
+                )
+
+
+
+                bot_response = response[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+
+   
+                response_queue.put(bot_response)
+
+            
+                synthesize_speech(bot_response, &#x27;response.mp3&#x27;)
+
+      
+                play_audio(&#x27;response.mp3&#x27;)</code></pre><h2 id="13d53754-b00b-45c2-b54a-cd73a5a08f3b" class="">Building the user Interface</h2><p id="c886411f-6198-4e52-badd-19df26c50528" class="">I was not sure what to use for the user interface, So I just googled and used ptinker.</p><p id="a2d59b3a-be99-4752-849a-0cbac3db371e" class="">
+</p><p id="ec03ca7b-66cf-4584-9be8-dc5e5fcd75f7" class="">In the process, I switched out text widget and used label for text display as it looked more modern.
+</p><p id="148bc6d4-1af0-4f22-b642-92af3465c0f6" class="">The <code><strong>create_gui()</strong></code> function creates the main window of the interface and sets its title, menu bar, and dimensions. It also initializes a dictionary called <code><strong>settings</strong></code> with some default values that are used to control the behavior of the program, such as the maximum number of tokens to use when generating responses, and a message that is displayed to the user when the program starts.</p><p id="df92e8dd-8632-4e44-8a73-1e9fe2678d6d" class="">The <code><strong>screen_width</strong></code> and <code><strong>screen_height</strong></code> variables are used to set the dimensions of the window to fill the entire screen.</p><p id="fe390add-3117-4a86-b1fc-307b2e9ef62e" class="">The <code><strong>menu_bar</strong></code> object is created using the <code><strong>Menu</strong></code> widget, and a <code><strong>settings_menu</strong></code> is created as a dropdown menu on the menu bar. The <code><strong>settings_menu</strong></code> contains one option: &quot;Open Settings&quot;, which is used to open a settings window when clicked.</p><p id="f0b4ddc5-17ad-458b-ba0f-1fc45ec1d710" class="">The <code><strong>video_frame</strong></code> is created to hold the video stream, and the <code><strong>text_frame</strong></code> is created to display the program&#x27;s responses to the user.</p><p id="e2a1b510-0593-4984-b891-6a2c21177598" class="">The <code><strong>update_video_label()</strong></code> function is responsible for updating the video stream shown in the GUI. It reads frames from two video files (one showing a static image, and the other showing a talking AI), resizes them, and then displays them on the GUI. The function uses the <code><strong>Label</strong></code> widget from Tkinter to display the video stream.</p><p id="80195a66-60a7-43c2-8747-831ea893ae83" class="">The <code><strong>text_var</strong></code> and <code><strong>text_widget</strong></code> variables are used to display the program&#x27;s responses to the user in the <code><strong>text_frame</strong></code> created earlier. The <code><strong>text_widget</strong></code> is created using the <code><strong>Label</strong></code> widget from Tkinter.</p><p id="6d87f75b-e01f-4b9e-a7c2-ce20e3eeefbf" class="">Finally, a <code><strong>response_queue</strong></code> is created to hold the program&#x27;s responses, and two threads are started: one to run the main program logic, and another to update the <code><strong>text_widget</strong></code> with the program&#x27;s responses.</p><p id="ab6d10e0-a534-4986-b308-dcf4006b6d9f" class="">
+</p><p id="41029d44-098b-4f04-9820-284972bc50a8" class="">Here is the code
+
+</p><pre id="797febe9-371f-43f8-a14e-f804db90ba35" class="code"><code>def create_gui():
+    root = Tk()
+    root.title(&quot;ALICS (Artificial Intelligence for Life Improvement and Counseling Support)&quot;)
+    menu_bar= tk.Menu(root)
+    root.config(menu=menu_bar)
+    settings_menu = tk.Menu(menu_bar, tearoff=0)
+    menu_bar.add_cascade(label=&quot;Settings&quot;, menu=settings_menu)
+    settings_menu.add_command(label=&quot;Open Settings&quot;, command=lambda: show_settings_window(settings))
+    settings = {
+        &#x27;system_message&#x27;: &quot;Your name is Alice, an acronym for Artistic Intelligence for Life Improvement and Counseling Support. As a creative and insightful personal therapist, your mission is to help clients address their problems with touch of humor. Make an effort to connect with clients on a personal level by sharing relevant anecdotes or insightful metaphors when appropriate.&quot;,
+        &#x27;max_tokens&#x27;: 150,
+        &#x27;settings_open&#x27;: False
+    }
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.geometry(f&quot;{screen_width}x{screen_height}&quot;)
+    root.configure(bg=&quot;black&quot;)
+
+    system_message_var = StringVar()
+    system_message_var.set(settings[&#x27;system_message&#x27;])
+    
+    max_tokens_var = IntVar()
+    max_tokens_var.set(150)
+
+   
+    video_frame = Frame(root, bg=&quot;black&quot;)
+    video_frame.pack(side=&quot;top&quot;, pady=(10, 0), anchor=&quot;center&quot;, expand=True)
+
+
+    video_file1 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/Defult2.MOV&quot;
+    video_file2 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/SPeak.MOV&quot;
+
+  
+    video_capture1 = cv2.VideoCapture(video_file1)
+    video_capture2 = cv2.VideoCapture(video_file2)
+
+    
+    second_video_frame_rate = 60 
+    video_capture2.set(cv2.CAP_PROP_FPS, second_video_frame_rate)
+
+
+    def update_video_label():
+        global is_audio_playing, video_capture1, video_capture2
+
+        if is_audio_playing:
+            video_capture = video_capture2
+            scale_percent = 30
+            frame_rate=100
+        else:
+            video_capture = video_capture1
+            scale_percent = 30  
+            frame_rate=100
+        ret, frame = video_capture.read()
+        if not ret:
+            video_capture.set(cv2.CAP_PROP_POS_FRAMES, 0)
+            ret, frame = video_capture.read()
+
+        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+
+        width = int(cv2image.shape[1] * scale_percent / 100)
+        height = int(cv2image.shape[0] * scale_percent / 100)
+
+        dim = (width, height)
+        resized = cv2.resize(cv2image, dim, interpolation=cv2.INTER_AREA)
+
+        img = Image.fromarray(resized)
+        imgtk = ImageTk.PhotoImage(image=img)
+        label.config(image=imgtk)
+        label.imgtk = imgtk
+        
+        delay= int(1000 / frame_rate)
+        root.after(delay, update_video_label)
+
+    
+    label = Label(video_frame, bg=&quot;black&quot;) #using lable instead of text widget. 
+    label.pack(side=&quot;top&quot;, anchor=&quot;center&quot;)
+
+    update_video_label()
+
+    
+    text_frame = Frame(root, bg=&quot;black&quot;)
+    text_frame.pack(side=&quot;top&quot;, pady=(50, 20), anchor=&quot;center&quot;, expand=True)
+
+    text_var = StringVar()
+    text_widget = tk.Label(text_frame, textvariable=text_var, wraplength=1000, bg=&quot;black&quot;, fg=&quot;white&quot;, font=(&quot;Nanum Gothic&quot;, 12))
+    text_widget.pack(expand=True, fill=BOTH, anchor=&quot;center&quot;)
+
+
+    response_queue = queue.Queue()
+    threading.Thread(target=lambda: asyncio.run(main_with_gui(response_queue, text_var, settings)), daemon=True).start()
+
+    threading.Thread(target=update_text_widget, args=(text_widget, text_var, response_queue, root), daemon=True).start()
+
+    root.mainloop()
+
+
+def update_text_widget(text_widget, text_var, response_queue, root):
+    while True:
+        response = response_queue.get()
+        text_var.set(f&quot;ALICS: {response}\n&quot;)</code></pre><p id="9377904b-e3ce-4745-b3c7-0ceff9900afb" class="">
+</p><h2 id="28f3580f-ff67-4d66-bbc1-53fa691e3395" class="">Animation, Logo and Clone voice</h2><p id="3185805a-2024-48f7-ad52-0184368f576e" class="">This part of the documentation could be found here.</p><figure id="281cd545-56b2-474d-b9ce-f0b1b25e6d48"><a href="https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/view?utm_content=DAFh1JIPrNE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Grey minimalist business project presentation</div><div class="bookmark-description">Check out this Presentation designed by 羅葉.</div></div><div class="bookmark-href"><img src="https://static.canva.com/static/images/android-192x192-2.png" class="icon bookmark-icon"/>https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/view?utm_content=DAFh1JIPrNE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink</div></div><img src="https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/screen" class="bookmark-image"/></a></figure><p id="60a2eb81-dff1-4993-a1bc-de3a12288bb1" class="">
+</p><p id="8747937f-632a-41fb-98ab-48ab12010bd8" class="">Here is the 11 lab official documentation for python code, the use of the clone function is in here</p><p id="807ef4ae-3c27-4e6e-b353-35f62b95f1fc" class="">
+</p><figure id="012cd921-38d4-4565-8dbb-0629e0448b96"><div class="source">https://github.com/elevenlabs/elevenlabs-python</div></figure><p id="ebadc032-98d9-479b-9f2d-cd84ba1844a6" class="">
+</p><h2 id="1c8aa06f-f29a-419e-a5cb-287bc0eac18a" class="">Setting Function</h2><p id="2d7f23f8-6b98-4eee-ab0b-d092ec588f03" class="">I have singed out the “max token”and “system message”</p><p id="36717e6a-b0b3-44f2-8070-f1bc9ac32659" class="">This code defines two functions related to the settings window of the application:</p><p id="d79bc157-99ab-4f62-ac28-fa3c28a25838" class=""><code>create_settings_window(settings)</code>: This function creates a new window using the Tk() method and sets the title of the window as &quot;ALICS Settings&quot;. It then defines a function called <code>save_settings()</code> which updates the <code>system_message</code> and <code>max_tokens</code> values in the <code>settings</code> dictionary with the values entered in the respective Entry widgets. After updating the values, the window is destroyed and the <code>settings_open</code> flag is set to False.</p><p id="83c41b4b-fbd7-41e1-ba83-706f132d5338" class="">The function then creates two Label widgets for the system message and max tokens and an Entry widget for each label to allow the user to enter their own values. The initial values of the Entry widgets are set to the current values stored in the <code>settings</code> dictionary. A Save button is also created which calls the <code>save_settings()</code> function when clicked.</p><p id="6eecbd45-b16d-44df-a49e-92fa407e0b8d" class=""><code>show_settings_window(settings)</code>: This function checks whether the settings window is already open by checking the value of the <code>settings_open</code> flag in the <code>settings</code> dictionary. If the window is not open, it sets the flag to True and calls the <code>create_settings_window()</code> function to create and display the settings window. If the window is already open, the function simply prints a message to indicate that the window is already open.</p><pre id="6dfca058-c973-40e5-85f2-46bcc6ade03d" class="code"><code>def create_settings_window(settings):
+    settings_window = Tk()
+    settings_window.title(&quot;ALICS Settings&quot;)
+
+    def save_settings():
+        settings[&#x27;system_message&#x27;] = system_message_entry.get()
+        settings[&#x27;max_tokens&#x27;] = int(max_tokens_entry.get())
+        settings_window.destroy()
+        settings[&#x27;settings_open&#x27;] = False
+
+
+    system_message_label = tk.Label(settings_window, text=&quot;System message:&quot;)
+    system_message_label.grid(row=0, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    system_message_entry = tk.Entry(settings_window)
+    system_message_entry.insert(0, settings[&#x27;system_message&#x27;])
+    system_message_entry.grid(row=0, column=1, padx=5, pady=5)
+
+
+    max_tokens_label = tk.Label(settings_window, text=&quot;Max tokens:&quot;)
+    max_tokens_label.grid(row=1, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    max_tokens_entry = tk.Entry(settings_window)
+    max_tokens_entry.insert(0, settings[&#x27;max_tokens&#x27;])
+    max_tokens_entry.grid(row=1, column=1, padx=5, pady=5)
+
+ 
+    save_button = tk.Button(settings_window, text=&quot;Save&quot;, command=save_settings)
+    save_button.grid(row=2, column=1, padx=5, pady=5, sticky=&quot;e&quot;)
+
+    settings_window.mainloop()
+
+def show_settings_window(settings):
+    print(&quot;show_settings_window called&quot;)
+    if not settings[&#x27;settings_open&#x27;]:
+        settings[&#x27;settings_open&#x27;] = True
+        create_settings_window(settings)</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">The final product code and installation instruction</summary><div class="indented"><p id="9a320ae5-528a-47fb-9064-639ce7a6c23f" class="">
+</p><p id="2364d2a3-4090-4b91-952b-dd98086f67bb" class=""><mark class="highlight-red">if you want to try this code, REMEMBER TO RUN IN </mark><strong><mark class="highlight-red">ANACONDA WITH 3.9 PYTHON VERSION</mark></strong><mark class="highlight-red">. ANYTHING ELESE WOULD NOT WORK!!!! BECAUSE OF NUMBA IS VERY UNDER DEVELOPED</mark></p><p id="ba37c6dc-f6c1-4558-8571-a5276ba26509" class="">
+</p><h3 id="c212f6ce-d6f5-4c2e-9848-52bae9a2d82f" class="">NECESSARY PACKAGES TO INSTALL TO RUN THE PROJECT</h3><p id="0dbdb45b-9758-4127-bf97-02489758b060" class="">
+</p><p id="681d68e2-1c20-4c65-b475-2bfe9e786d14" class="">pip install -U openai-whisper</p><p id="51382a37-3519-4871-99ca-396e846a3463" class="">pip install SpeechRecognition</p><p id="4fd185c5-350d-45ba-8916-f5e7bdfc8323" class="">pip install elevenlabs</p><p id="e6870895-25dd-41cf-a221-21b308af6de6" class="">pip install simpleaudio</p><p id="69a4c999-8ba0-45f7-b982-3532e04a8e19" class="">pip install PyAudio   // Please install pyaudio before pydub</p><p id="f8245583-c9fe-4311-af11-3e96f03a1c9d" class="">pip install pydub</p><p id="2a427b33-5052-458a-8a62-5b21bd40fc59" class="">pip install opencv-python</p><h2 id="72b3ffc7-9aa2-4dda-a171-a0f1ad3025d2" class="">Alics with bella voice</h2><pre id="67d14586-2aa4-4b2a-a23d-c8ce4b5686ae" class="code"><code>import cv2
+from tkinter import *
+import tkinter as tk
+from PIL import Image, ImageTk
+import threading
+import openai
+import asyncio
+import whisper
+import speech_recognition as sr
+import simpleaudio as sa
+from pydub import AudioSegment
+import warnings
+from numba import NumbaDeprecationWarning
+import queue
+from elevenlabs import generate, play
+
+
+
+warnings.filterwarnings(&quot;ignore&quot;, category=NumbaDeprecationWarning)
+
+openai.api_key = f&quot;[YOUR API KEY]]&quot;
+
+
+
+recognizer = sr.Recognizer()
+recognizer.energy_threshold = 300
+GPT_WAKE_WORD = &quot;hi alex&quot;
+GPT_SLEEP_WORD = &quot;goodbye&quot;
+is_audio_playing = False
+video_file1 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/Defult2.MOV&quot;
+video_file2 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/SPeak.MOV&quot;
+video_capture1 = cv2.VideoCapture(video_file1)
+video_capture2 = cv2.VideoCapture(video_file2)
+
+def create_settings_window(settings):
+    settings_window = Tk()
+    settings_window.title(&quot;ALICS Settings&quot;)
+
+    def save_settings():
+        settings[&#x27;system_message&#x27;] = system_message_entry.get()
+        settings[&#x27;max_tokens&#x27;] = int(max_tokens_entry.get())
+        settings_window.destroy()
+        settings[&#x27;settings_open&#x27;] = False
+
+
+    system_message_label = tk.Label(settings_window, text=&quot;System message:&quot;)
+    system_message_label.grid(row=0, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    system_message_entry = tk.Entry(settings_window)
+    system_message_entry.insert(0, settings[&#x27;system_message&#x27;])
+    system_message_entry.grid(row=0, column=1, padx=5, pady=5)
+
+
+    max_tokens_label = tk.Label(settings_window, text=&quot;Max tokens:&quot;)
+    max_tokens_label.grid(row=1, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    max_tokens_entry = tk.Entry(settings_window)
+    max_tokens_entry.insert(0, settings[&#x27;max_tokens&#x27;])
+    max_tokens_entry.grid(row=1, column=1, padx=5, pady=5)
+
+ 
+    save_button = tk.Button(settings_window, text=&quot;Save&quot;, command=save_settings)
+    save_button.grid(row=2, column=1, padx=5, pady=5, sticky=&quot;e&quot;)
+
+    settings_window.mainloop()
+
+def show_settings_window(settings):
+    print(&quot;show_settings_window called&quot;)
+    if not settings[&#x27;settings_open&#x27;]:
+        settings[&#x27;settings_open&#x27;] = True
+        create_settings_window(settings)
+
+def get_wake_word(phrase):
+    
+   if GPT_WAKE_WORD in phrase.lower():
+       return GPT_WAKE_WORD
+   else:
+       return None
+  
+
+
+def get_sleep_word(phrase):
+   if GPT_SLEEP_WORD in phrase.lower():
+       return GPT_SLEEP_WORD
+   else:
+       return None   
+
+
+
+API_KEY = f&quot;[YOUR API KEY]]]&quot;
+VOICE_ID = &quot;[YOUR VOICE ID]&quot;
+
+
+def synthesize_speech(text, output_filename):
+     audio = generate(text, voice=VOICE_ID, api_key=API_KEY)
+     with open(output_filename, &#x27;wb&#x27;) as f:
+         f.write(audio)
+
+
+
+
+def transcribe_audio_with_whisper(audio_file_path):
+    model = whisper.load_model(&quot;base&quot;)  
+    result = model.transcribe(audio_file_path)
+    return result[&quot;text&quot;].strip()
+
+  
+def play_audio(file):
+    global is_audio_playing
+    is_audio_playing = True
+    sound = AudioSegment.from_mp3(file) #
+    audio_data = sound.export(format=&quot;wav&quot;)
+    audio_data = audio_data.read()
+
+    
+    audio_data = audio_data[44:]
+
+    audio_wave = sa.WaveObject(audio_data, sound.channels, sound.sample_width, sound.frame_rate)
+    play_obj = audio_wave.play()
+    play_obj.wait_done()
+    is_audio_playing = False
+
+
+def process_user_input(user_input, response_queue):
+    bot_response = &quot;You said: &quot; + user_input
+    response_queue.put(bot_response)
+
+
+
+
+
+async def main_with_gui(response_queue, text_var, settings):
+    wake_word_detected = False
+    greeting_played = False
+
+    while True:
+        with sr.Microphone() as source:
+            recognizer.adjust_for_ambient_noise(source)
+
+            if not wake_word_detected:
+                print(f&quot;Say {GPT_WAKE_WORD} to start a conversation...&quot;)
+
+                while True:
+                    audio = recognizer.listen(source)
+                    audio_file = &quot;audio.wav&quot;
+                    with open(audio_file, &quot;wb&quot;) as f:
+                        f.write(audio.get_wav_data())
+
+                    phrase = transcribe_audio_with_whisper(audio_file)
+                    print(f&quot;Phrase: {phrase}&quot;)
+
+                    if get_wake_word(phrase) is not None:
+                        wake_word_detected = True
+                        break
+                    else:
+                        print(&quot;Not a wake word. Try again.&quot;)
+
+            if not greeting_played:
+      
+                play_audio(&#x27;greetings.mp3&#x27;)
+                greeting_played = True
+
+            while wake_word_detected:
+                print(&quot;Speak a prompt...&quot;)
+                audio = recognizer.listen(source)
+                audio_file = &quot;audio_prompt.wav&quot;
+                with open(audio_file, &quot;wb&quot;) as f:
+                    f.write(audio.get_wav_data())
+
+                user_input = transcribe_audio_with_whisper(audio_file)
+
+                print(f&quot;User input: {user_input}&quot;)
+
+                if get_sleep_word(user_input) is not None:
+                    wake_word_detected = False
+                    greeting_played = False
+                    print(&quot;Sleep word detected, going back to listening for wake word.&quot;)
+
+                  
+                    play_audio(&#x27;sleep.mp3&#x27;)
+
+                 
+                    text_var.set(&quot;&quot;)
+
+                    break
+
+                response = openai.ChatCompletion.create(
+                    model=&quot;gpt-3.5-turbo&quot;,
+                    messages=[
+                        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: settings[&#x27;system_message&#x27;]},
+                        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_input},
+                    ],
+                    temperature=0.6,
+                    max_tokens=settings[&#x27;max_tokens&#x27;],
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0,
+                    n=1,
+                    stop=[&quot;\nUser:&quot;],
+                )
+
+
+
+                bot_response = response[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+
+   
+                response_queue.put(bot_response)
+
+            
+                synthesize_speech(bot_response, &#x27;response.mp3&#x27;)
+
+      
+                play_audio(&#x27;response.mp3&#x27;)
+                
+
+def create_gui():
+    root = Tk()
+    root.title(&quot;ALICS (Artificial Intelligence for Life Improvement and Counseling Support)&quot;)
+    menu_bar= tk.Menu(root)
+    root.config(menu=menu_bar)
+    settings_menu = tk.Menu(menu_bar, tearoff=0)
+    menu_bar.add_cascade(label=&quot;Settings&quot;, menu=settings_menu)
+    settings_menu.add_command(label=&quot;Open Settings&quot;, command=lambda: show_settings_window(settings))
+    settings = {
+        &#x27;system_message&#x27;: &quot;Your name is Alice, an acronym for Artistic Intelligence for Life Improvement and Counseling Support. As a creative and insightful personal therapist, your mission is to help clients address their problems with touch of humor. Make an effort to connect with clients on a personal level by sharing relevant anecdotes or insightful metaphors when appropriate.&quot;,
+        &#x27;max_tokens&#x27;: 150,
+        &#x27;settings_open&#x27;: False
+    }
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.geometry(f&quot;{screen_width}x{screen_height}&quot;)
+    root.configure(bg=&quot;black&quot;)
+
+    system_message_var = StringVar()
+    system_message_var.set(settings[&#x27;system_message&#x27;])
+    
+    max_tokens_var = IntVar()
+    max_tokens_var.set(150)
+
+   
+    video_frame = Frame(root, bg=&quot;black&quot;)
+    video_frame.pack(side=&quot;top&quot;, pady=(10, 0), anchor=&quot;center&quot;, expand=True)
+
+
+    video_file1 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/Defult2.MOV&quot;
+    video_file2 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/SPeak.MOV&quot;
+
+  
+    video_capture1 = cv2.VideoCapture(video_file1)
+    video_capture2 = cv2.VideoCapture(video_file2)
+
+    
+    second_video_frame_rate = 60 
+    video_capture2.set(cv2.CAP_PROP_FPS, second_video_frame_rate)
+
+
+    def update_video_label():
+        global is_audio_playing, video_capture1, video_capture2
+
+        if is_audio_playing:
+            video_capture = video_capture2
+            scale_percent = 30
+            frame_rate=100
+        else:
+            video_capture = video_capture1
+            scale_percent = 30  
+            frame_rate=100
+        ret, frame = video_capture.read()
+        if not ret:
+            video_capture.set(cv2.CAP_PROP_POS_FRAMES, 0)
+            ret, frame = video_capture.read()
+
+        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+
+        width = int(cv2image.shape[1] * scale_percent / 100)
+        height = int(cv2image.shape[0] * scale_percent / 100)
+
+        dim = (width, height)
+        resized = cv2.resize(cv2image, dim, interpolation=cv2.INTER_AREA)
+
+        img = Image.fromarray(resized)
+        imgtk = ImageTk.PhotoImage(image=img)
+        label.config(image=imgtk)
+        label.imgtk = imgtk
+        
+        delay= int(1000 / frame_rate)
+        root.after(delay, update_video_label)
+
+    
+    label = Label(video_frame, bg=&quot;black&quot;)
+    label.pack(side=&quot;top&quot;, anchor=&quot;center&quot;)
+
+    update_video_label()
+
+    
+    text_frame = Frame(root, bg=&quot;black&quot;)
+    text_frame.pack(side=&quot;top&quot;, pady=(50, 20), anchor=&quot;center&quot;, expand=True)
+
+    text_var = StringVar()
+    text_widget = tk.Label(text_frame, textvariable=text_var, wraplength=1000, bg=&quot;black&quot;, fg=&quot;white&quot;, font=(&quot;Nanum Gothic&quot;, 12))
+    text_widget.pack(expand=True, fill=BOTH, anchor=&quot;center&quot;)
+
+
+    response_queue = queue.Queue()
+    threading.Thread(target=lambda: asyncio.run(main_with_gui(response_queue, text_var, settings)), daemon=True).start()
+
+    threading.Thread(target=update_text_widget, args=(text_widget, text_var, response_queue, root), daemon=True).start()
+
+    root.mainloop()
+
+
+def update_text_widget(text_widget, text_var, response_queue, root):
+    while True:
+        response = response_queue.get()
+        text_var.set(f&quot;ALICS: {response}\n&quot;)  
+
+if __name__ == &quot;__main__&quot;:
+   create_gui()</code></pre><h2 id="9b2d565f-40bf-4e1e-925e-6fbf35d6d177" class="">Alics with clone voice</h2><pre id="cce9ad93-284c-49f7-b9d8-ac9b38fdb8e3" class="code"><code>import cv2
+from tkinter import *
+import tkinter as tk
+from PIL import Image, ImageTk
+import threading
+import openai
+import asyncio
+import whisper
+import speech_recognition as sr
+import simpleaudio as sa
+from pydub import AudioSegment
+import queue
+import elevenlabs
+from elevenlabs import generate, play
+from elevenlabs import clone, generate as generate_voice
+from elevenlabs import set_api_key
+
+
+set_api_key(f&quot;[YOUR API KEY]]&quot;)
+
+
+
+openai.api_key = &quot;[YOUR API KEY]]&quot;
+
+
+
+recognizer = sr.Recognizer()
+recognizer.energy_threshold = 300
+GPT_WAKE_WORD = &quot;hi alex&quot;
+GPT_SLEEP_WORD = &quot;goodbye&quot;
+is_audio_playing = False
+video_file1 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/Defult2.MOV&quot;
+video_file2 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/SPeak.MOV&quot;
+video_capture1 = cv2.VideoCapture(video_file1)
+video_capture2 = cv2.VideoCapture(video_file2)
+
+def create_settings_window(settings):
+    settings_window = Tk()
+    settings_window.title(&quot;ALICS Settings&quot;)
+
+    def save_settings():
+        settings[&#x27;system_message&#x27;] = system_message_entry.get()
+        settings[&#x27;max_tokens&#x27;] = int(max_tokens_entry.get())
+        settings_window.destroy()
+        settings[&#x27;settings_open&#x27;] = False
+
+    system_message_label = tk.Label(settings_window, text=&quot;System message:&quot;)
+    system_message_label.grid(row=0, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    system_message_entry = tk.Entry(settings_window)
+    system_message_entry.insert(0, settings[&#x27;system_message&#x27;])
+    system_message_entry.grid(row=0, column=1, padx=5, pady=5)
+
+    max_tokens_label = tk.Label(settings_window, text=&quot;Max tokens:&quot;)
+    max_tokens_label.grid(row=1, column=0, sticky=&quot;e&quot;, padx=5, pady=5)
+    max_tokens_entry = tk.Entry(settings_window)
+    max_tokens_entry.insert(0, settings[&#x27;max_tokens&#x27;])
+    max_tokens_entry.grid(row=1, column=1, padx=5, pady=5)
+
+
+    save_button = tk.Button(settings_window, text=&quot;Save&quot;, command=save_settings)
+    save_button.grid(row=2, column=1, padx=5, pady=5, sticky=&quot;e&quot;)
+
+    settings_window.mainloop()
+
+def show_settings_window(settings):
+    print(&quot;show_settings_window called&quot;)
+    if not settings[&#x27;settings_open&#x27;]:
+        settings[&#x27;settings_open&#x27;] = True
+        create_settings_window(settings)
+
+def get_wake_word(phrase):
+    
+   if GPT_WAKE_WORD in phrase.lower():
+       return GPT_WAKE_WORD
+   else:
+       return None
+  
+
+
+def get_sleep_word(phrase):
+   if GPT_SLEEP_WORD in phrase.lower():
+       return GPT_SLEEP_WORD
+   else:
+       return None   
+
+def clone_voice():
+    voice = clone(
+        name=&quot;yuris&quot;,
+        description=&quot;&quot;,
+        files=[&quot;&quot;],
+    )
+    return voice
+
+voice = clone_voice()
+
+
+
+
+
+
+def synthesize_speech(text, output_filename):
+    audio = generate_voice(text=text, voice=voice)
+    with open(output_filename, &#x27;wb&#x27;) as f:
+        f.write(audio)
+
+
+
+
+def transcribe_audio_with_whisper(audio_file_path):
+    model = whisper.load_model(&quot;base&quot;) 
+    result = model.transcribe(audio_file_path)
+    return result[&quot;text&quot;].strip()
+
+  
+def play_audio(file):
+    global is_audio_playing
+    is_audio_playing = True
+    sound = AudioSegment.from_mp3(file)
+    audio_data = sound.export(format=&quot;wav&quot;)
+    audio_data = audio_data.read()
+
+ 
+    audio_data = audio_data[44:]
+
+    audio_wave = sa.WaveObject(audio_data, sound.channels, sound.sample_width, sound.frame_rate)
+    play_obj = audio_wave.play()
+    play_obj.wait_done()
+    is_audio_playing = False
+
+
+def process_user_input(user_input, response_queue):
+    bot_response = &quot;You said: &quot; + user_input
+    response_queue.put(bot_response)
+
+
+
+
+
+async def main_with_gui(response_queue, text_var, settings):
+    wake_word_detected = False
+    greeting_played = False
+
+    while True:
+        with sr.Microphone() as source:
+            recognizer.adjust_for_ambient_noise(source)
+
+            if not wake_word_detected:
+                print(f&quot;Say {GPT_WAKE_WORD} to start a conversation...&quot;)
+
+                while True:
+                    audio = recognizer.listen(source)
+                    audio_file = &quot;audio.wav&quot;
+                    with open(audio_file, &quot;wb&quot;) as f:
+                        f.write(audio.get_wav_data())
+
+                    phrase = transcribe_audio_with_whisper(audio_file)
+                    print(f&quot;Phrase: {phrase}&quot;)
+
+                    if get_wake_word(phrase) is not None:
+                        wake_word_detected = True
+                        break
+                    else:
+                        print(&quot;Not a wake word. Try again.&quot;)
+
+            if not greeting_played:
+         
+                play_audio(&#x27;greetings.mp3&#x27;)
+                greeting_played = True
+
+            while wake_word_detected:
+                print(&quot;Speak a prompt...&quot;)
+                audio = recognizer.listen(source)
+                audio_file = &quot;audio_prompt.wav&quot;
+                with open(audio_file, &quot;wb&quot;) as f:
+                    f.write(audio.get_wav_data())
+
+                user_input = transcribe_audio_with_whisper(audio_file)
+
+                print(f&quot;User input: {user_input}&quot;)
+
+                if get_sleep_word(user_input) is not None:
+                    wake_word_detected = False
+                    greeting_played = False
+                    print(&quot;Sleep word detected, going back to listening for wake word.&quot;)
+
+                    play_audio(&#x27;sleep.mp3&#x27;)
+
+     
+                    text_var.set(&quot;&quot;)
+
+                    break
+
+                response = openai.ChatCompletion.create(
+                    model=&quot;gpt-3.5-turbo&quot;,
+                    messages=[
+                        {&quot;role&quot;: &quot;system&quot;, &quot;content&quot;: settings[&#x27;system_message&#x27;]},
+                        {&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: user_input},
+                    ],
+                    temperature=0.6,
+                    max_tokens=settings[&#x27;max_tokens&#x27;],
+                    top_p=1,
+                    frequency_penalty=0,
+                    presence_penalty=0,
+                    n=1,
+                    stop=[&quot;\nUser:&quot;],
+                )
+
+
+
+                bot_response = response[&quot;choices&quot;][0][&quot;message&quot;][&quot;content&quot;]
+
+      
+                response_queue.put(bot_response)
+
+   
+                synthesize_speech(bot_response, &#x27;response.mp3&#x27;)
+
+     
+                play_audio(&#x27;response.mp3&#x27;)
+                
+
+def create_gui():
+    root = Tk()
+    root.title(&quot;ALICS (Artificial Intelligence for Life Improvement and Counseling Support)&quot;)
+    menu_bar= tk.Menu(root)
+    root.config(menu=menu_bar)
+    settings_menu = tk.Menu(menu_bar, tearoff=0)
+    menu_bar.add_cascade(label=&quot;Settings&quot;, menu=settings_menu)
+    settings_menu.add_command(label=&quot;Open Settings&quot;, command=lambda: show_settings_window(settings))
+    settings = {
+        &#x27;system_message&#x27;: &quot;Your name is Yuris, You are a 19 years old college student who speaks with a sarcastic tone. You are talking to a friend who is trying to imporve her life&quot;,
+        &#x27;max_tokens&#x27;: 150,
+        &#x27;settings_open&#x27;: False
+    }
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.geometry(f&quot;{screen_width}x{screen_height}&quot;)
+    root.configure(bg=&quot;black&quot;)
+
+    system_message_var = StringVar()
+    system_message_var.set(settings[&#x27;system_message&#x27;])
+    
+    max_tokens_var = IntVar()
+    max_tokens_var.set(150)
+
+    
+    video_frame = Frame(root, bg=&quot;black&quot;)
+    video_frame.pack(side=&quot;top&quot;, pady=(10, 0), anchor=&quot;center&quot;, expand=True)
+
+
+    video_file1 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/Defult2.MOV&quot;
+    video_file2 = &quot;/Users/giaogiaoguo/Desktop/interface/Alics_vid/SPeak.MOV&quot;
+
+
+    video_capture1 = cv2.VideoCapture(video_file1)
+    video_capture2 = cv2.VideoCapture(video_file2)
+
+    second_video_frame_rate = 60  
+    video_capture2.set(cv2.CAP_PROP_FPS, second_video_frame_rate)
+
+
+    def update_video_label():
+        global is_audio_playing, video_capture1, video_capture2
+
+        if is_audio_playing:
+            video_capture = video_capture2
+            scale_percent = 30
+            frame_rate=100
+        else:
+            video_capture = video_capture1
+            scale_percent = 30  
+            frame_rate=100
+        ret, frame = video_capture.read()
+        if not ret:
+            video_capture.set(cv2.CAP_PROP_POS_FRAMES, 0)
+            ret, frame = video_capture.read()
+
+        cv2image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+
+        width = int(cv2image.shape[1] * scale_percent / 100)
+        height = int(cv2image.shape[0] * scale_percent / 100)
+
+        dim = (width, height)
+        resized = cv2.resize(cv2image, dim, interpolation=cv2.INTER_AREA)
+
+        img = Image.fromarray(resized)
+        imgtk = ImageTk.PhotoImage(image=img)
+        label.config(image=imgtk)
+        label.imgtk = imgtk
+        
+        delay= int(1000 / frame_rate)
+        root.after(delay, update_video_label)
+
+    
+    label = Label(video_frame, bg=&quot;black&quot;)
+    label.pack(side=&quot;top&quot;, anchor=&quot;center&quot;)
+
+    update_video_label()
+
+    
+    text_frame = Frame(root, bg=&quot;black&quot;)
+    text_frame.pack(side=&quot;top&quot;, pady=(50, 20), anchor=&quot;center&quot;, expand=True)
+
+    text_var = StringVar()
+    text_widget = tk.Label(text_frame, textvariable=text_var, wraplength=1000, bg=&quot;black&quot;, fg=&quot;white&quot;, font=(&quot;Nanum Gothic&quot;, 12))
+    text_widget.pack(expand=True, fill=BOTH, anchor=&quot;center&quot;)
+
+
+    response_queue = queue.Queue()
+    threading.Thread(target=lambda: asyncio.run(main_with_gui(response_queue, text_var, settings)), daemon=True).start()
+
+    threading.Thread(target=update_text_widget, args=(text_widget, text_var, response_queue, root), daemon=True).start()
+
+    root.mainloop()
+
+
+def update_text_widget(text_var, response_queue):
+    while True:
+       
+        response = response_queue.get()
+        text_var.set(f&quot;YOUR_NAME: {response}\n&quot;) 
+
+if __name__ == &quot;__main__&quot;:
+   create_gui()</code></pre></div></details><details open=""><summary style="font-weight:600;font-size:1.875em;line-height:1.3">Other parts -presentation, mockup, wood work</summary><div class="indented"><h2 id="2123df01-d488-478d-b5c2-bc9145ad259b" class="">Presentation</h2><figure id="e94e4ea7-2144-41c4-8a63-cd8312883afd"><a href="https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/view?utm_content=DAFh1JIPrNE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Grey minimalist business project presentation</div><div class="bookmark-description">Check out this Presentation designed by 羅葉.</div></div><div class="bookmark-href"><img src="https://static.canva.com/static/images/android-192x192-2.png" class="icon bookmark-icon"/>https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/view?utm_content=DAFh1JIPrNE&amp;utm_campaign=designshare&amp;utm_medium=link&amp;utm_source=publishsharelink</div></div><img src="https://www.canva.com/design/DAFh1JIPrNE/VA8wimZGCOXKy3Fswd9Duw/screen" class="bookmark-image"/></a></figure><p id="ffd894c0-1d55-4dc9-8740-8f2167adcf58" class="">
+</p><h2 id="396910be-acef-47fa-ac3a-158ef4b3dfcd" class="">user (or just me) test video</h2><figure id="f676d9d6-ed68-486b-a6b3-9eacd2c87df5"><div class="source">https://drive.google.com/file/d/1R6R-iFa3MOt5GV2t6GgkX3iQAwd303YJ/view?usp=sharing</div></figure><figure id="6605ab85-1169-4e2b-9562-5fd64a8f41ba"><div class="source">https://drive.google.com/file/d/1XgiaYMAZ7weIPeZj44BVz_MF-3Djcl12/view?usp=sharing</div></figure><p id="4aa1f5b1-92f5-4356-914c-8aef830d33d2" class="">
+</p><h2 id="204626d9-4d4e-4241-a471-757163bc4136" class="">Mock up
+</h2><figure id="7125f3bb-ea6d-4eb2-bfa6-37ed3b651228"><div class="source">https://drive.google.com/file/d/19YWYeaSprH1ol_JSFCQcweeg-lxW9e5k/view?usp=sharing</div></figure><figure id="42236ea9-87ff-4b99-bb95-28ab6e716624"><a href="https://motionarray.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=13705712800&amp;utm_content=131044932944&amp;utm_term=motion%20array&amp;keyword=motion%20array&amp;ad=599871144615&amp;matchtype=e&amp;device=c&amp;gclid=EAIaIQobChMI743IyvPk_gIVNgyzAB3wQQEPEAAYASAAEgKyT_D_BwE" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">The All-in-One Video &amp; Filmmakers Platform | Motion Array</div><div class="bookmark-description">Create your projects with unlimited asset downloads: premium Templates, Presets, Stock Photos, video elements and a website builder - all in one membership!</div></div><div class="bookmark-href"><img src="https://s3.amazonaws.com/ma-content/images/2021/apple-touch-icon-152x152-precomposed.png" class="icon bookmark-icon"/>https://motionarray.com/?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=13705712800&amp;utm_content=131044932944&amp;utm_term=motion%20array&amp;keyword=motion%20array&amp;ad=599871144615&amp;matchtype=e&amp;device=c&amp;gclid=EAIaIQobChMI743IyvPk_gIVNgyzAB3wQQEPEAAYASAAEgKyT_D_BwE</div></div><img src="https://motionarray.com/assets/images/shared/logo--cyan_2x.png?v=1" class="bookmark-image"/></a></figure><p id="839864c3-98e1-426c-8f12-9b85cdd0e9b8" class="">
+</p></a></figure></div></details></div></article></body></html>
